@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details - MovieRanker</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body class="movie-page">
+    <header class="site-header">
+      <div class="page-container navigation">
+        <a href="/" class="site-logo" aria-label="MovieRanker home">Movie<span>Ranker</span></a>
+        <nav class="site-links" aria-label="Main navigation">
+          <a href="/#browse">Movies</a>
+          <a href="/#leaderboard">Top Rated</a>
+        </nav>
+        <div id="accountArea" class="account-area"></div>
+      </div>
+    </header>
+
+    <main class="movie-detail-shell">
+      <p id="movieMessage" class="loading-message">Loading movie...</p>
+
+      <div id="movieDetail" class="movie-detail-layout" hidden>
+        <!-- LEFT COLUMN -->
+        <aside class="movie-sidebar">
+          <div class="movie-poster-card">
+            <img id="moviePoster" alt="Movie poster" hidden />
+            <div id="posterPlaceholder" class="poster-placeholder">
+              <div class="poster-placeholder-inner">
+                <span class="poster-icon">M</span>
+                <span>No Poster Available</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT COLUMN -->
+        <section class="movie-main-content">
+          <!-- TITLE / HEADER -->
+          <div class="movie-hero-card">
+            <div class="movie-title-block">
+              <h1 id="movieTitle"></h1>
+              <p id="movieYear"></p>
+            </div>
+
+            <div class="community-summary-mini">
+              <div
+                id="averageStars"
+                class="stars"
+                role="img"
+                aria-label="Not rated yet"
+              ></div>
+              <p id="averageScore">Not rated yet</p>
+              <p id="ratingCount">0 ratings</p>
+            </div>
+          </div>
+
+          <!-- OVERVIEW -->
+          <section class="content-card">
+            <h2>Overview</h2>
+            <p id="movieDescription" class="movie-overview-text"></p>
+          </section>
+
+          <!-- YOUR RATING -->
+          <section class="content-card">
+            <h2>Your Rating</h2>
+
+            <p id="guestPrompt" class="guest-prompt" hidden>
+              <a href="/login.html">Log in</a> to rate this movie.
+            </p>
+
+            <p id="ratingStatus" role="status" class="status-text"></p>
+
+            <form id="ratingForm" class="rating-form" hidden>
+              <div class="rating-top-row">
+                <label for="ratingInput" class="rating-label"> Rating </label>
+                <span id="selectedRating" class="selected-rating">7/10</span>
+              </div>
+
+              <input
+                type="range"
+                id="ratingInput"
+                min="1"
+                max="10"
+                step="1"
+                value="7"
+                required
+              />
+
+              <div id="yourStars" class="stars your-stars" role="img"></div>
+
+              <div class="review-field-group">
+                <label for="reviewInput" class="review-label">
+                  Your Review <span>(Optional)</span>
+                </label>
+
+                <textarea
+                  id="reviewInput"
+                  rows="6"
+                  maxlength="2000"
+                  placeholder="Write what you thought about the movie..."
+                ></textarea>
+              </div>
+
+              <div class="rating-form-actions">
+                <button type="submit" id="ratingSubmit" class="primary-action">
+                  Submit Rating
+                </button>
+                <p id="formMessage" role="status" class="status-text"></p>
+              </div>
+            </form>
+          </section>
+
+          <!-- COMMUNITY REVIEWS -->
+          <section class="content-card reviews-section">
+            <div class="reviews-header">
+              <h2>Community Reviews</h2>
+              <p>See what other MovieRanker users thought.</p>
+            </div>
+
+            <div id="reviewList" class="community-review-list">
+              Loading reviews...
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="/js/account.js"></script>
+    <script src="/js/movie.js"></script>
+    <script src="/js/rating-actions.js"></script>
+  </body>
+</html>

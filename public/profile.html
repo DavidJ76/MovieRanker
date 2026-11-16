@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Profile - MovieRanker</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body class="profile-page">
+    <header class="site-header">
+      <div class="page-container navigation">
+        <a href="/" class="site-logo" aria-label="MovieRanker home">Movie<span>Ranker</span></a>
+        <nav class="site-links" aria-label="Main navigation">
+          <a href="/#browse">Movies</a>
+          <a href="/#leaderboard">Top Rated</a>
+        </nav>
+        <div id="accountArea" class="account-area"></div>
+      </div>
+    </header>
+
+    <main class="profile-container">
+      <h1>My Profile</h1>
+
+      <p id="profileMessage">Loading your profile...</p>
+      <p id="actionFeedback" role="status"></p>
+
+      <div id="profileContent" hidden>
+        <!-- ACCOUNT INFORMATION -->
+        <section class="profile-header">
+          <div>
+            <h2 id="profileUsername"></h2>
+            <p id="profileEmail"></p>
+            <p id="profileJoined"></p>
+          </div>
+        </section>
+
+        <!-- ACCOUNT STATISTICS -->
+        <section class="profile-stats">
+          <div class="stat-card">
+            <strong id="totalRated">0</strong>
+            <span>Movies Rated</span>
+          </div>
+
+          <div class="stat-card">
+            <strong id="personalAverage">—</strong>
+            <span>Average Score</span>
+          </div>
+
+          <div class="stat-card">
+            <strong id="totalReviews">0</strong>
+            <span>Written Reviews</span>
+          </div>
+        </section>
+
+        <!-- RATING HISTORY -->
+        <section class="profile-history">
+          <h2>My Ratings & Reviews</h2>
+
+          <div id="myRatings"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="/js/account.js"></script>
+    <script src="/js/profile.js"></script>
+  </body>
+</html>

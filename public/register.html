@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account — MovieRanker</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <div class="page-container navigation">
+        <a href="/" class="site-logo" aria-label="MovieRanker home"
+          >Movie<span>Ranker</span></a
+        >
+        <nav class="site-links" aria-label="Main navigation">
+          <a href="/#browse">Movies</a>
+          <a href="/#leaderboard">Top Rated</a>
+        </nav>
+        <div id="accountArea" class="account-area"></div>
+      </div>
+    </header>
+    <main class="auth-main">
+      <section class="auth-panel" aria-labelledby="authTitle">
+        <h1 id="authTitle">Create an account</h1>
+        <form id="registerForm" class="auth-form">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            autocomplete="username"
+            placeholder="Choose a username"
+            minlength="3"
+            maxlength="30"
+            required
+          />
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="At least 8 characters"
+            minlength="8"
+            required
+          />
+          <button class="auth-submit" type="submit">Create account</button>
+        </form>
+        <p class="auth-message" id="message" role="status"></p>
+        <p class="auth-switch">
+          Already have an account? <a href="/login.html">Log in</a>
+        </p>
+      </section>
+    </main>
+    <script src="/js/account.js"></script>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

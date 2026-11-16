@@ -1,0 +1,1981 @@
+/* MovieRanker unified stylesheet — obsolete homepage rules removed. */
+
+/* ==========================================================================
+
+   MOVIERANKER — Shared design tokens and homepage styles
+
+   All pages load this file. Each page section is grouped below.
+
+   ========================================================================== */
+
+:root {
+
+  color-scheme: dark;
+
+  --bg: #0e0d14;
+
+  --surface: #181621;
+
+  --surface-hover: #211d2e;
+
+  --field: #13111b;
+
+  --line: #302b3c;
+
+  --text: #f4f0fa;
+
+  --muted: #a69db5;
+
+  --purple: #b39aff;
+
+  --purple-light: #d0c0ff;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  margin: 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family:
+
+    Inter,
+
+    system-ui,
+
+    -apple-system,
+
+    "Segoe UI",
+
+    Arial,
+
+    sans-serif;
+
+  line-height: 1.55;
+
+}
+
+button,
+
+input,
+
+select,
+
+textarea {
+
+  font: inherit;
+
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+a:focus-visible,
+
+button:focus-visible,
+
+input:focus-visible,
+
+select:focus-visible,
+
+textarea:focus-visible {
+
+  outline: 2px solid var(--purple);
+
+  outline-offset: 3px;
+
+}
+
+[hidden] {
+
+  display: none !important;
+
+}
+
+.sr-only {
+
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+}
+
+.page-container {
+
+  width: min(100% - 48px, 1160px);
+
+  margin-inline: auto;
+
+}
+
+
+/* SHARED NAVBAR — identical on all five HTML pages */
+
+.site-header {
+
+  background: #14121c;
+
+  border-bottom: 1px solid var(--line);
+
+}
+
+.navigation {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 18px 28px;
+
+  min-height: 82px;
+
+  padding-block: 14px;
+
+}
+
+.site-header .site-logo {
+
+  color: #ffffff;
+
+  font-weight: 800;
+
+  font-size: 26px;
+
+  letter-spacing: -1.1px;
+
+  white-space: nowrap;
+
+}
+
+.site-header .site-logo:hover {
+
+  color: #ffffff;
+
+}
+
+.site-header .site-logo span {
+
+  color: var(--purple);
+
+}
+
+.site-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+}
+
+.site-links a {
+
+  color: #ece8f4;
+
+  font-size: 16px;
+
+  font-weight: 650;
+
+  border-bottom: 2px solid transparent;
+
+  padding-block: 8px;
+
+}
+
+.site-links a:hover {
+
+  border-color: var(--purple);
+
+  color: var(--purple-light);
+
+}
+
+#accountArea {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  font-size: 14px;
+
+}
+
+#accountArea span {
+
+  color: var(--muted);
+
+}
+
+#accountArea a {
+
+  color: var(--text);
+
+  font-weight: 650;
+
+}
+
+#accountArea a:hover {
+
+  color: var(--purple);
+
+}
+
+#accountArea button {
+
+  border: 1px solid #52465f;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #eee6f9;
+
+  padding: 9px 15px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+}
+
+#accountArea button:hover {
+
+  background: #292337;
+
+  border-color: #786299;
+
+}
+
+
+.eyebrow {
+
+  color: var(--purple);
+
+  font-size: 11px;
+
+  letter-spacing: 2.3px;
+
+  font-weight: 800;
+
+  margin: 0 0 14px;
+
+}
+
+
+/* The JS creates <div class="col-6 col-md-4 ..."> wrappers.
+
+   We use our own responsive grid so Bootstrap isn't needed. */
+
+
+.site-footer {
+
+  padding: 27px 0 34px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  text-align: center;
+
+}
+
+.site-footer span {
+
+  color: var(--purple);
+
+  padding-inline: 5px;
+
+}
+
+
+@media (max-width: 800px) {
+
+  
+
+  .navigation {
+
+    justify-content: center;
+
+  }
+
+  
+
+  
+
+}
+
+@media (max-width: 550px) {
+
+  .page-container {
+
+    width: min(100% - 30px, 1160px);
+
+  }
+
+  .navigation {
+
+    justify-content: space-between;
+
+    gap: 11px 16px;
+
+  }
+
+  .site-header .site-logo {
+
+    font-size: 23px;
+
+  }
+
+  .site-links {
+
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 24px;
+
+  }
+
+  #accountArea {
+
+    margin-left: auto;
+
+    gap: 8px;
+
+  }
+
+  #accountArea span {
+
+    display: none;
+
+  }
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+  }
+
+}
+
+
+/* ==========================================================================
+
+   MOVIE DETAIL PAGE — preserved from movie.css (navbar removed)
+
+   ========================================================================== */
+
+.movie-page {
+
+  background:
+
+    radial-gradient(
+
+      circle at top left,
+
+      rgba(120, 85, 180, 0.1),
+
+      transparent 30%
+
+    ),
+
+    radial-gradient(
+
+      circle at top right,
+
+      rgba(165, 120, 255, 0.08),
+
+      transparent 28%
+
+    ),
+
+    #0d0b14;
+
+  color: #f4f1fb;
+
+  font-family: Arial, sans-serif;
+
+  min-height: 100vh;
+
+  margin: 0;
+
+}
+
+
+.movie-main-content a {
+
+  color: #c2adff;
+
+  text-decoration: none;
+
+}
+
+
+.movie-main-content a:hover {
+
+  color: #dbcfff;
+
+}
+
+
+/* MAIN LAYOUT */
+
+
+.movie-detail-shell {
+
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 34px 32px 70px;
+
+}
+
+
+.loading-message {
+
+  color: #bdb2d9;
+
+  font-size: 16px;
+
+}
+
+
+.movie-detail-layout {
+
+  display: grid;
+
+  grid-template-columns: 320px minmax(0, 1fr);
+
+  gap: 32px;
+
+  align-items: start;
+
+}
+
+
+.movie-detail-layout[hidden] {
+
+  display: none !important;
+
+}
+
+
+/* LEFT COLUMN */
+
+
+.movie-sidebar {
+
+  position: sticky;
+
+  top: 105px;
+
+}
+
+
+.movie-poster-card {
+
+  background: linear-gradient(
+
+    180deg,
+
+    rgba(25, 20, 40, 0.95),
+
+    rgba(18, 14, 28, 0.95)
+
+  );
+
+  border: 1px solid rgba(167, 136, 255, 0.12);
+
+  border-radius: 22px;
+
+  padding: 18px;
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+
+}
+
+
+#moviePoster,
+
+#posterPlaceholder {
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  border-radius: 16px;
+
+  display: block;
+
+  object-fit: cover;
+
+}
+
+
+#moviePoster[hidden] {
+
+  display: none !important;
+
+}
+
+
+#posterPlaceholder {
+
+  background: linear-gradient(145deg, rgba(37, 29, 56, 1), rgba(22, 18, 36, 1));
+
+  border: 1px solid rgba(172, 140, 255, 0.12);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+#posterPlaceholder[hidden] {
+
+  display: none !important;
+
+}
+
+
+.poster-placeholder-inner {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: #b8aee0;
+
+  text-align: center;
+
+  padding: 20px;
+
+}
+
+
+.poster-icon {
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 18px;
+
+  background: rgba(174, 138, 255, 0.14);
+
+  border: 1px solid rgba(174, 138, 255, 0.24);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  color: #decfff;
+
+}
+
+
+/* RIGHT COLUMN */
+
+
+.movie-main-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+
+}
+
+
+.movie-hero-card,
+
+.content-card {
+
+  background: linear-gradient(
+
+    180deg,
+
+    rgba(22, 18, 34, 0.98),
+
+    rgba(16, 13, 26, 0.98)
+
+  );
+
+  border: 1px solid rgba(167, 136, 255, 0.12);
+
+  border-radius: 22px;
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.movie-hero-card {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  align-items: flex-start;
+
+  padding: 28px 30px;
+
+}
+
+
+.content-card {
+
+  padding: 28px 30px;
+
+}
+
+
+.movie-title-block h1 {
+
+  margin: 0 0 10px;
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.6px;
+
+  color: #ffffff;
+
+}
+
+
+#movieYear {
+
+  margin: 0;
+
+  color: #b7acd7;
+
+  font-size: 16px;
+
+}
+
+
+.community-summary-mini {
+
+  min-width: 220px;
+
+  text-align: right;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 10px;
+
+}
+
+
+#averageScore {
+
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  color: #ffffff;
+
+}
+
+
+#ratingCount {
+
+  margin: 0;
+
+  color: #a79ec7;
+
+  font-size: 14px;
+
+}
+
+
+.content-card h2 {
+
+  margin: 0 0 18px;
+
+  font-size: 28px;
+
+  color: #ffffff;
+
+  letter-spacing: -0.3px;
+
+}
+
+
+.movie-overview-text {
+
+  margin: 0;
+
+  line-height: 1.75;
+
+  font-size: 16px;
+
+  color: #e1dcf1;
+
+}
+
+
+/* FORM */
+
+
+.guest-prompt,
+
+.status-text {
+
+  margin: 0 0 12px;
+
+  color: #bcaee0;
+
+  font-size: 14px;
+
+}
+
+
+.rating-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  align-items: stretch;
+
+}
+
+
+.rating-form[hidden] {
+
+  display: none !important;
+
+}
+
+
+.rating-top-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+}
+
+
+.rating-label,
+
+.review-label {
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #f5f1ff;
+
+}
+
+
+.review-label span {
+
+  color: #9f94c3;
+
+  font-weight: 500;
+
+}
+
+
+.selected-rating {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 86px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(165, 125, 255, 0.14);
+
+  border: 1px solid rgba(165, 125, 255, 0.2);
+
+  color: #d8c4ff;
+
+  font-weight: 800;
+
+  font-size: 16px;
+
+}
+
+
+#ratingInput {
+
+  width: 100%;
+
+  accent-color: #a78cff;
+
+  cursor: pointer;
+
+}
+
+
+.your-stars {
+
+  margin-top: -2px;
+
+}
+
+
+.review-field-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+#reviewInput {
+
+  width: 100%;
+
+  min-height: 150px;
+
+  padding: 16px 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(167, 136, 255, 0.18);
+
+  background: rgba(12, 10, 20, 0.92);
+
+  color: #f2edff;
+
+  font: inherit;
+
+  line-height: 1.6;
+
+  resize: vertical;
+
+  outline: none;
+
+}
+
+
+#reviewInput:focus {
+
+  border-color: rgba(178, 148, 255, 0.52);
+
+  box-shadow: 0 0 0 3px rgba(167, 136, 255, 0.1);
+
+}
+
+
+#reviewInput::placeholder {
+
+  color: #8f85b0;
+
+}
+
+
+.rating-form-actions {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  align-items: flex-start;
+
+}
+
+
+.primary-action {
+
+  background: linear-gradient(180deg, #ab90ff, #9678f0);
+
+  color: #100c1c;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 14px 22px;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 30px rgba(140, 108, 230, 0.22);
+
+}
+
+
+.primary-action:hover {
+
+  filter: brightness(1.05);
+
+}
+
+
+.primary-action:disabled {
+
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+}
+
+
+/* DELETE ACTIONS */
+
+
+.rating-delete-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 2px;
+
+}
+
+
+.remove-review-button,
+
+.delete-rating-button {
+
+  padding: 11px 16px;
+
+  border-radius: 12px;
+
+  font: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+
+}
+
+
+.remove-review-button {
+
+  background: rgba(255, 255, 255, 0.02);
+
+  color: #ece7ff;
+
+  border: 1px solid rgba(173, 145, 255, 0.18);
+
+}
+
+
+.remove-review-button:hover {
+
+  background: rgba(173, 145, 255, 0.1);
+
+}
+
+
+.delete-rating-button {
+
+  background: rgba(255, 92, 130, 0.08);
+
+  color: #ffb7c8;
+
+  border: 1px solid rgba(255, 122, 157, 0.28);
+
+}
+
+
+.delete-rating-button:hover {
+
+  background: rgba(255, 92, 130, 0.14);
+
+}
+
+
+.rating-delete-actions button:disabled {
+
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+}
+
+
+/* REVIEWS */
+
+
+.reviews-header {
+
+  margin-bottom: 18px;
+
+}
+
+
+.reviews-header h2 {
+
+  margin-bottom: 8px;
+
+}
+
+
+.reviews-header p {
+
+  margin: 0;
+
+  color: #a89fca;
+
+  font-size: 15px;
+
+}
+
+
+.community-review-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+}
+
+
+.review-card {
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border: 1px solid rgba(167, 136, 255, 0.12);
+
+  border-radius: 18px;
+
+  padding: 22px 22px 18px;
+
+}
+
+
+.review-card h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 18px;
+
+  color: #ffffff;
+
+}
+
+
+.review-card p {
+
+  margin: 0;
+
+}
+
+
+.review-card > p:nth-of-type(1) {
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  color: #cab7ff;
+
+  margin-bottom: 8px;
+
+}
+
+
+.review-card .small-stars,
+
+.review-card .stars {
+
+  margin-bottom: 14px;
+
+}
+
+
+.review-card .small-stars {
+
+  font-size: 18px;
+
+}
+
+
+.review-card > p:nth-of-type(2) {
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: #e6e1f3;
+
+  margin-bottom: 14px;
+
+  white-space: pre-wrap;
+
+}
+
+
+.review-card small {
+
+  display: block;
+
+  color: #988eb9;
+
+  font-size: 13px;
+
+}
+
+
+/* STARS */
+
+
+.stars {
+
+  --fill: 0%;
+
+  display: inline-block;
+
+  position: relative;
+
+  font-size: 26px;
+
+  line-height: 1;
+
+  letter-spacing: 2px;
+
+  color: #413a56;
+
+  white-space: nowrap;
+
+}
+
+
+.stars::before {
+
+  content: "★★★★★";
+
+}
+
+
+.stars::after {
+
+  content: "★★★★★";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: var(--fill);
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  color: #b89cff;
+
+}
+
+
+/* Movie page responsive layout */
+
+@media (max-width: 1024px) {
+
+  .movie-detail-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .movie-sidebar {
+
+    position: static;
+
+  }
+
+  .movie-poster-card {
+
+    max-width: 340px;
+
+  }
+
+  .movie-hero-card {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+  .community-summary-mini {
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    min-width: 0;
+
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .movie-detail-shell {
+
+    padding: 22px 16px 50px;
+
+  }
+
+  .movie-hero-card,
+
+  .content-card {
+
+    padding: 20px 18px;
+
+    border-radius: 18px;
+
+  }
+
+  .movie-title-block h1 {
+
+    font-size: 30px;
+
+  }
+
+  .content-card h2 {
+
+    font-size: 24px;
+
+  }
+
+  .rating-top-row {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+  .selected-rating {
+
+    min-width: 0;
+
+  }
+
+  .rating-delete-actions {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  .remove-review-button,
+
+  .delete-rating-button,
+
+  .primary-action {
+
+    width: 100%;
+
+  }
+
+  .review-card {
+
+    padding: 18px 16px;
+
+  }
+
+}
+
+
+/* ==========================================================================
+
+   PROFILE PAGE — from theme.css
+
+   ========================================================================== */
+
+/* Profile */
+
+.profile-container {
+
+  max-width: 1100px;
+
+  margin: 52px auto 80px;
+
+}
+
+.profile-container > h1 {
+
+  font-weight: 800;
+
+}
+
+.profile-header,
+
+.stat-card,
+
+.profile-rating-card {
+
+  background: var(--surface);
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+}
+
+.profile-avatar {
+
+  background: #332548;
+
+  color: var(--purple);
+
+}
+
+.profile-header p,
+
+.stat-card span,
+
+.profile-date {
+
+  color: var(--muted) !important;
+
+}
+
+.stat-card strong,
+
+.profile-score-line strong {
+
+  color: var(--purple) !important;
+
+}
+
+.profile-rating-card {
+
+  padding: 22px;
+
+}
+
+.profile-movie-title {
+
+  color: var(--text) !important;
+
+}
+
+.profile-movie-title:hover {
+
+  color: var(--purple) !important;
+
+}
+
+.profile-review-text {
+
+  color: #d3cddd;
+
+}
+
+.profile-poster {
+
+  background: linear-gradient(150deg, #302442, #1b1826);
+
+  border-radius: 9px;
+
+}
+
+.profile-poster-placeholder {
+
+  color: #a99bc0;
+
+}
+
+.profile-button {
+
+  padding: 9px 14px;
+
+}
+
+#actionFeedback,
+
+#formMessage {
+
+  color: var(--purple);
+
+}
+
+/* These actions were shared across pages by the old theme.css. */
+
+.profile-button {
+
+  background: transparent;
+
+  border-radius: 8px;
+
+  transition:
+
+    background 0.15s ease,
+
+    border-color 0.15s ease;
+
+}
+
+.profile-button:not(.delete-button) {
+
+  border: 1px solid #554b64;
+
+  color: var(--text);
+
+}
+
+.profile-button:not(.delete-button):hover {
+
+  background: #292333;
+
+}
+
+.profile-button.delete-button {
+
+  border: 1px solid #8e596a;
+
+  color: #f0a9ba;
+
+}
+
+.profile-button.delete-button:hover {
+
+  background: #41232f;
+
+}
+
+.profile-container {
+
+  width: min(100% - 48px, 1100px);
+
+}
+
+
+/* ==========================================================================
+
+   LOGIN AND REGISTER — from theme.css
+
+   ========================================================================== */
+
+/* Authentication pages */
+
+.auth-page {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+}
+
+.auth-main {
+
+  min-height: calc(100vh - 72px);
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 50px 18px 70px;
+
+}
+
+.auth-panel {
+
+  width: min(100%, 430px);
+
+  padding: 36px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--line);
+
+  border-radius: 18px;
+
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+
+}
+
+.auth-eyebrow {
+
+  margin: 0 0 10px;
+
+  color: var(--purple);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+}
+
+.auth-panel h1 {
+
+  font-size: 1.85rem;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  margin: 0 0 9px;
+
+}
+
+.auth-subtitle {
+
+  margin: 0 0 29px;
+
+  color: var(--muted);
+
+  font-size: 0.91rem;
+
+}
+
+.auth-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+.auth-form label {
+
+  font-size: 0.86rem;
+
+  font-weight: 650;
+
+  margin-top: 5px;
+
+}
+
+.auth-form input {
+
+  width: 100%;
+
+  padding: 12px 13px;
+
+  font: inherit;
+
+  font-size: 0.95rem;
+
+}
+
+.auth-submit {
+
+  width: 100%;
+
+  padding: 12px 18px;
+
+  margin-top: 13px;
+
+  cursor: pointer;
+
+  font: inherit;
+
+}
+
+.auth-message {
+
+  color: #e9b3c4;
+
+  font-size: 0.87rem;
+
+  margin: 18px 0 0;
+
+  min-height: 0;
+
+}
+
+.auth-message:empty {
+
+  display: none;
+
+}
+
+.auth-switch {
+
+  color: var(--muted);
+
+  text-align: center;
+
+  font-size: 0.88rem;
+
+  margin: 25px 0 0;
+
+}
+
+.auth-switch a {
+
+  color: var(--purple);
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+}
+
+.auth-switch a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+/* Field and submit styling originally supplied by theme.css to the login page. */
+
+.auth-form input {
+
+  background: #14121d;
+
+  border: 1px solid #40384f;
+
+  color: var(--text);
+
+  border-radius: 9px;
+
+}
+
+.auth-form input::placeholder {
+
+  color: #81798f;
+
+}
+
+.auth-form input:focus {
+
+  border-color: #8f6ee2;
+
+  box-shadow: 0 0 0 3px rgba(179, 154, 255, 0.11);
+
+  outline: none;
+
+}
+
+.auth-submit {
+
+  background: var(--purple);
+
+  border: 1px solid var(--purple);
+
+  color: #181124;
+
+  font-weight: 700;
+
+  border-radius: 9px;
+
+}
+
+.auth-submit:hover {
+
+  background: #c7b5ff;
+
+  border-color: #c7b5ff;
+
+}
+
+@media (max-width: 700px) {
+
+  .auth-panel {
+
+    padding: 28px 22px;
+
+  }
+
+  .profile-container {
+
+    margin-top: 30px;
+
+  }
+
+}
+
+/* MOVIERANKER HOME V2 START
+   Homepage-only styles. Other pages keep their existing styles.
+*/
+.mr-home .mr-hero {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 62% 95% at 50% -25%, rgba(138, 98, 218, .20), transparent 78%),
+                linear-gradient(180deg, #15101f 0%, #100e17 100%);
+    border-bottom: 1px solid var(--line, #302b3c);
+}
+.mr-home .mr-hero-inner { padding: 76px 0 83px; text-align: center; }
+.mr-home .mr-section-eyebrow {
+    margin: 0 0 14px;
+    color: var(--purple, #b39aff);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.mr-home .mr-hero h1 { margin: 0; color: var(--text, #f4f0fa); font-size: clamp(37px, 5.4vw, 65px); font-weight: 800; letter-spacing: -2.2px; line-height: 1.1; }
+.mr-home .mr-hero h1 span { color: var(--purple, #b39aff); }
+
+.mr-home .mr-hero-links { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; }
+.mr-home .mr-hero-primary, .mr-home .mr-hero-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1px solid #604e79; border-radius: 10px; padding: 12px 21px; font-size: 14px; font-weight: 750; transition: background .18s, transform .18s; }
+.mr-home .mr-hero-primary { border-color: var(--purple, #b39aff); background: var(--purple, #b39aff); color: #180e27; }
+.mr-home .mr-hero-primary:hover { background: #cfbfff; transform: translateY(-2px); }
+.mr-home .mr-hero-secondary { background: #211b2e; color: #eee6f7; }
+.mr-home .mr-hero-secondary:hover { background: #2d243d; transform: translateY(-2px); }
+.mr-home .mr-home-main { padding-top: 61px; padding-bottom: 78px; }
+.mr-home .mr-section { margin-bottom: 83px; scroll-margin-top: 25px; }
+.mr-home .mr-section:last-child { margin-bottom: 0; }
+.mr-home .mr-section-top { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 25px; }
+.mr-home .mr-section-eyebrow { margin: 0 0 10px; letter-spacing: 1.9px; }
+.mr-home .mr-section h2 { margin: 0 0 6px; color: var(--text, #f4f0fa); font-size: clamp(26px, 3vw, 36px); line-height: 1.15; font-weight: 800; letter-spacing: -.8px; }
+.mr-home .mr-section h2 span { color: var(--purple-light, #d0c0ff); }
+.mr-home .mr-section-subtitle { margin: 10px 0 0; color: var(--muted, #a69db5); font-size: 14px; }
+
+
+.mr-home .mr-status { min-height: 0; margin: 0; color: #b7aace; font-size: 14px; }
+.mr-home .mr-status:not(:empty) { margin-bottom: 16px; }
+.mr-home .mr-trending-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.mr-home .mr-trending-card { display: flex; flex-direction: column; min-width: 0; padding: 10px; border: 1px solid #332b40; border-radius: 15px; background: var(--surface, #181621); transition: border-color .18s, background .18s, transform .18s; }
+.mr-home .mr-trending-card:hover { background: var(--surface-hover, #211d2e); border-color: #6a5187; transform: translateY(-3px); }
+.mr-home .mr-trending-poster { position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 10px; background: linear-gradient(150deg, #322542, #1d1928); }
+.mr-home .mr-trending-poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mr-home .mr-poster-placeholder { display: grid; place-items: center; width: 100%; height: 100%; padding: 12px; color: #9c8cac; font-size: 12px; text-align: center; background: linear-gradient(150deg, #322542, #1d1928); }
+.mr-home .mr-trend-position { position: absolute; top: 9px; left: 9px; padding: 3px 9px; border-radius: 7px; border: 1px solid rgba(232,222,255,.23); background: rgba(18,12,29,.83); color: #f2eafe; font-size: 12px; font-weight: 800; }
+.mr-home .mr-trend-details { display: flex; flex: 1; flex-direction: column; padding: 13px 5px 4px; }
+.mr-home .mr-trend-title { margin: 0 0 4px; min-height: 41px; font-size: 15px; font-weight: 750; line-height: 1.35; overflow-wrap: anywhere; }
+.mr-home .mr-trend-year { margin: 0 0 15px; color: var(--muted, #a69db5); font-size: 13px; }
+.mr-home .mr-rate-button { width: 100%; margin-top: auto; padding: 10px; border: 1px solid #6b5685; border-radius: 9px; color: #e6d8ff; background: #30253e; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; transition: background .18s; }
+.mr-home .mr-rate-button:hover { background: #47345c; }
+.mr-home .mr-rate-button:disabled { opacity: .65; cursor: wait; }
+.mr-home .mr-leaderboard-section { padding-top: 5px; }
+.mr-home .mr-ranking-list { display: flex; flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+.mr-home .mr-ranking-row { display: grid; grid-template-columns: 52px 52px minmax(0,1fr) 140px 18px; align-items: center; gap: 19px; min-height: 91px; padding: 13px 22px; color: var(--text, #f4f0fa); border: 1px solid var(--line, #302b3c); border-radius: 13px; background: var(--surface, #181621); transition: border-color .18s, background .18s; }
+.mr-home .mr-ranking-row:hover { background: var(--surface-hover, #211d2e); border-color: #6a5187; }
+.mr-home .mr-ranking-number { font-size: 24px; line-height: 1; font-weight: 800; color: var(--purple, #b39aff); font-variant-numeric: tabular-nums; }
+.mr-home .mr-ranking-poster { width: 46px; height: 63px; border-radius: 6px; overflow: hidden; background: #251b33; }
+.mr-home .mr-ranking-poster img { display: block; height: 100%; width: 100%; object-fit: cover; }
+.mr-home .mr-ranking-poster .mr-poster-placeholder { font-size: 8px; }
+.mr-home .mr-ranking-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.mr-home .mr-ranking-title { color: var(--text, #f4f0fa); font-size: 16px; font-weight: 750; line-height: 1.25; overflow-wrap: anywhere; }
+.mr-home .mr-ranking-year { color: var(--muted, #a69db5); font-size: 13px; }
+.mr-home .mr-ranking-score { display: flex; align-items: baseline; justify-content: flex-end; text-align: right; flex-wrap: wrap; column-gap: 3px; color: var(--purple-light, #d0c0ff); white-space: nowrap; }
+.mr-home .mr-score-star { margin-right: 4px; font-size: 17px; }
+.mr-home .mr-score-value { font-size: 21px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.mr-home .mr-score-out-of { font-size: 12px; color: #b0a2c5; }
+.mr-home .mr-score-count { flex-basis: 100%; margin-top: 2px; color: var(--muted, #a69db5); font-size: 12px; }
+.mr-home .mr-ranking-arrow { color: #86749c; font-size: 26px; text-align: right; }
+.mr-home .mr-footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; text-align: left; }
+.mr-home .mr-footer-brand { color: #eee9f7; font-size: 18px; font-weight: 800; letter-spacing: -.5px; }
+.mr-home .mr-footer-brand span { color: var(--purple, #b39aff); padding: 0; }
+
+
+@media (max-width: 1050px) {
+    .mr-home .mr-trending-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+@media (max-width: 800px) {
+    .mr-home .mr-trending-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .mr-home .mr-section-top { align-items: flex-start; }
+    .mr-home .mr-ranking-row { grid-template-columns: 37px 46px minmax(0,1fr) 114px 12px; gap: 12px; padding: 11px 14px; }
+}
+@media (max-width: 550px) {
+    .mr-home .mr-hero-inner { padding: 56px 0 60px; }
+    .mr-home .mr-hero h1 { font-size: 39px; letter-spacing: -1.5px; }
+    
+    .mr-home .mr-home-main { padding-top: 42px; }
+    .mr-home .mr-section-top { flex-direction: column; gap: 12px; }
+    .mr-home .mr-trending-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .mr-home .mr-ranking-row { grid-template-columns: 29px 39px minmax(0,1fr) 85px; gap: 9px; min-height: 71px; padding: 10px; }
+    .mr-home .mr-ranking-poster { width: 38px; height: 54px; }
+    .mr-home .mr-ranking-number { font-size: 17px; }
+    .mr-home .mr-ranking-title { font-size: 13px; }
+    .mr-home .mr-ranking-year { font-size: 11px; }
+    .mr-home .mr-score-star { font-size: 12px; margin-right: 0; }
+    .mr-home .mr-score-value { font-size: 15px; }
+    .mr-home .mr-score-out-of { font-size: 10px; }
+    .mr-home .mr-score-count { font-size: 10px; }
+    .mr-home .mr-ranking-arrow { display: none; }
+    .mr-home .mr-footer-inner { justify-content: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mr-home .mr-trending-card,
+    .mr-home .mr-ranking-row,
+    .mr-home .mr-hero-primary,
+    .mr-home .mr-hero-secondary { transition: none; }
+}
+/* MOVIERANKER HOME V2 END */
+
+/* MOVIERANKER SEARCH START — append to the END of public/css/style.css */
+.mr-home .mr-movie-search {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    max-width: 780px;
+    margin: 26px auto 0;
+}
+.mr-home .mr-movie-search input {
+    flex: 1;
+    min-width: 0;
+    min-height: 52px;
+    padding: 13px 18px;
+    background: #1b1726;
+    border: 1px solid #65517f;
+    border-radius: 12px;
+    color: var(--text, #f4f0fa);
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+}
+.mr-home .mr-movie-search input::placeholder { color: #a196b2; }
+.mr-home .mr-movie-search input:focus-visible {
+    border-color: var(--purple, #b39aff);
+    box-shadow: 0 0 0 3px rgba(179, 154, 255, .18);
+}
+.mr-home .mr-search-submit,
+.mr-home .mr-search-clear {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 750;
+    cursor: pointer;
+    border: 1px solid #6a5784;
+}
+.mr-home .mr-search-submit { background: var(--purple, #b39aff); color: #190f26; border-color: var(--purple, #b39aff); }
+.mr-home .mr-search-submit:hover { background: #d1bfff; }
+.mr-home .mr-search-clear { background: #282034; color: var(--text, #f4f0fa); }
+.mr-home .mr-search-clear:hover { background: #382b49; }
+.mr-home .mr-search-hint { margin: 9px auto 26px !important; color: var(--muted, #a69db5) !important; font-size: 12px !important; }
+.mr-home .mr-search-results-section { scroll-margin-top: 22px; }
+.mr-home .mr-search-results-section[hidden] { display: none !important; }
+.mr-home .mr-search-results-section .mr-trending-card { min-height: 100%; }
+@media (max-width: 640px) {
+    .mr-home .mr-movie-search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+    .mr-home .mr-movie-search input { grid-column: 1 / -1; min-height: 48px; }
+    .mr-home .mr-search-submit, .mr-home .mr-search-clear { padding: 10px 15px; }
+    .mr-home .mr-movie-search .mr-search-submit { grid-column: 1; }
+    .mr-home .mr-movie-search .mr-search-clear:not([hidden]) { grid-column: 2; }
+}
+/* MOVIERANKER SEARCH END */

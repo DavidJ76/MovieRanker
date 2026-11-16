@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0d14">
+  <meta name="description" content="Discover five trending movies from TMDB and the MovieRanker community's top ten rated films.">
+  <title>MovieRanker — Trending &amp; Top 10</title>
+  <link rel="stylesheet" href="/css/style.css?v=search1">
+</head>
+<body class="mr-home">
+  <header class="site-header">
+    <div class="page-container navigation">
+      <a href="/" class="site-logo" aria-label="MovieRanker home">Movie<span>Ranker</span></a>
+      <nav class="site-links" aria-label="Main navigation">
+        <a href="#search">Search</a>
+        <a href="#trending">Trending</a>
+        <a href="#leaderboard">Top 10</a>
+      </nav>
+      <div id="accountArea" class="account-area"></div>
+    </div>
+  </header>
+
+  <section class="mr-hero" aria-labelledby="mrHeroTitle">
+    <div class="page-container mr-hero-inner">
+      <h1 id="mrHeroTitle">Discover what's <span>trending.</span></h1>
+      <form id="movieSearchForm" class="mr-movie-search" role="search" autocomplete="off">
+        <label class="sr-only" for="movieSearchInput">Search movies on TMDB</label>
+        <input id="movieSearchInput" name="query" type="search" placeholder="Search any movie…" minlength="2" maxlength="100" spellcheck="false" aria-describedby="movieSearchHint">
+        <button class="mr-search-submit" type="submit">Search movies</button>
+        <button class="mr-search-clear" id="movieSearchClear" type="button" hidden>Clear</button>
+      </form>
+      <p class="mr-search-hint" id="movieSearchHint">Search TMDB's movie catalog, then add a movie to rate it.</p>
+      <div class="mr-hero-links">
+        <a class="mr-hero-primary" href="#trending">Explore trending</a>
+        <a class="mr-hero-secondary" href="#leaderboard">View the Top 10</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-container mr-home-main">
+    <!-- Alias anchors preserve links from other existing MovieRanker pages. -->
+    <span id="browse" class="sr-only" aria-hidden="true"></span>
+    <span id="tmdb" class="sr-only" aria-hidden="true"></span>
+
+    <section id="search" class="mr-section mr-search-results-section" aria-labelledby="searchHeading" hidden>
+      <div class="mr-section-top">
+        <div>
+          <p class="mr-section-eyebrow">DISCOVER MOVIES</p>
+          <h2 id="searchHeading">Search <span>results</span></h2>
+          <p class="mr-section-subtitle" id="searchResultsSubtitle">Movies from TMDB, ready to rate on MovieRanker.</p>
+        </div>
+      </div>
+      <p id="movieSearchStatus" class="mr-status" role="status" aria-live="polite"></p>
+      <div id="movieSearchResults" class="mr-trending-grid" aria-label="Movie search results"></div>
+    </section>
+
+    <section id="trending" class="mr-section" aria-labelledby="trendingHeading">
+      <div class="mr-section-top">
+        <div>
+          <h2 id="trendingHeading">Trending <span>this week</span></h2>
+          <p class="mr-section-subtitle">Five movies trending on TMDB. Pick one to rate it on MovieRanker.</p>
+        </div>
+      </div>
+      <p id="trendingStatus" class="mr-status" role="status" aria-live="polite">Loading trending movies…</p>
+      <div id="trendingList" class="mr-trending-grid" aria-label="Five trending movies"></div>
+    </section>
+
+    <section id="leaderboard" class="mr-section mr-leaderboard-section" aria-labelledby="top10Heading">
+      <div class="mr-section-top">
+        <div>
+          <h2 id="top10Heading">MovieRanker <span>Top 10</span></h2>
+        </div>
+      </div>
+      <p id="rankingStatus" class="mr-status" role="status" aria-live="polite">Loading community rankings…</p>
+      <div id="mrTop10" class="mr-ranking-list" aria-label="Top ten community-rated movies"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer mr-footer">
+    <div class="page-container mr-footer-inner">
+      <span class="mr-footer-brand">Movie<span>Ranker</span></span>
+  </footer>
+
+  <script defer src="/js/account.js"></script>
+  <script defer src="/js/home.js?v=search1"></script>
+</body>
+</html>
